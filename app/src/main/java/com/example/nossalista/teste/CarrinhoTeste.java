@@ -58,7 +58,7 @@ public class CarrinhoTeste {
     public static void setProdutos(ArrayList<Produto> produtos) {
         CarrinhoTeste.produtos = produtos;
     }
-    
+
     public static Carrinho getC1() {
         return c1;
     }
