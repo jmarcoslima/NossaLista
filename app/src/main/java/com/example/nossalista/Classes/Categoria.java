@@ -5,6 +5,12 @@ public class Categoria {
     private long id;
     private String nome;
 
+    public Categoria(String nome, long id){
+
+        this.nome = nome;
+        this.id = id;
+    }
+
     public Categoria(String nome){
 
         this.nome = nome;
@@ -29,4 +35,5 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 }

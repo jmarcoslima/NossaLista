@@ -14,7 +14,12 @@ public class Banco extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
 
     public final String TABLE_PRODUTO = "Produto";
+    public final String COLUMN_NAME_PRODUTO = "nome";
+
     public final String TABLE_CATEGORIA = "Categoria";
+    public final String COLUMN_NAME_CATEGORIA = "nome";
+    public final String COLUMN_ID_CATEGORIA = "id";
+
     public final String TABLE_CARRINHO = "Carrinho";
     public final String TABLE_ITEM = "Item";
 
@@ -26,8 +31,8 @@ public class Banco extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String dll = "CREATE TABLE " + TABLE_CATEGORIA
-                + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + " nome VARCHAR(45) NOT NULL"
+                + " (" + COLUMN_ID_CATEGORIA + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                +  COLUMN_NAME_CATEGORIA + " VARCHAR(45) NOT NULL"
                 + ");";
 
         String dll2 = "CREATE TABLE " + TABLE_PRODUTO
@@ -42,7 +47,7 @@ public class Banco extends SQLiteOpenHelper {
                 + ");";
 
         String dll4 = "CREATE TABLE " + TABLE_ITEM
-                + "( id INT PRIMARY KEY AUTOINCREMENT, "
+                + "( id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " fkProduto INTEGER, "
                 + " fkCarrinho INTEGER, "
                 + " qtd FLOAT, "
