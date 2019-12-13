@@ -11,7 +11,6 @@ public class CarrinhoTeste {
 
     private static ArrayList<Categoria> categorias = new ArrayList<Categoria>();
     private static ArrayList<Produto> produtos = new ArrayList<Produto>();
-    private static ArrayList<Carrinho> carrinhos = new ArrayList<Carrinho>();
 
     private static Carrinho c1, c2, c3;
 
@@ -42,5 +41,45 @@ public class CarrinhoTeste {
         c1 = new Carrinho(itens1);
         c2 = new Carrinho(itens2);
         c3 = new Carrinho(itens3);
+    }
+
+    public static ArrayList<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public static void setCategorias(ArrayList<Categoria> categorias) {
+        CarrinhoTeste.categorias = categorias;
+    }
+
+    public static ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public static void setProdutos(ArrayList<Produto> produtos) {
+        CarrinhoTeste.produtos = produtos;
+    }
+
+    public static Carrinho getC1() {
+        return c1;
+    }
+
+    public static void setC1(Carrinho c1) {
+        CarrinhoTeste.c1 = c1;
+    }
+
+    public static Carrinho getC2() {
+        return c2;
+    }
+
+    public static void setC2(Carrinho c2) {
+        CarrinhoTeste.c2 = c2;
+    }
+
+    public static Carrinho getC3() {
+        return c3;
+    }
+
+    public static void setC3(Carrinho c3) {
+        CarrinhoTeste.c3 = c3;
     }
 }
