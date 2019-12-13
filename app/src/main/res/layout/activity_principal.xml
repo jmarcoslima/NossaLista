@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/colorgradient"
-    tools:context=".MainActivity">
+    tools:context=".PrincipalActivity">
 
     <LinearLayout
+        android:id="@+id/principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -19,6 +20,7 @@
             android:layout_marginRight="20dp">
 
             <ImageView
+                android:id="@+id/menu"
                 android:layout_marginTop="5dp"
                 android:layout_width="85dp"
                 android:layout_height="85dp"
@@ -311,5 +313,4 @@
 
 
     </LinearLayout>
-
 </ScrollView>
