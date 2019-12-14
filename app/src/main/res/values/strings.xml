@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NossaLista</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 </resources>
