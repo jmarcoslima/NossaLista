@@ -92,15 +92,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Ao clicar fora da barra ela some
-
-        /*maincontent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-*/
     }
 
     private void abrirMenu() {
@@ -139,12 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void swipeMenu() {
-        maincontent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-
-            }
-        });
 
         maincontent.setOnTouchListener(new Swipe(MainActivity.this) {
 
