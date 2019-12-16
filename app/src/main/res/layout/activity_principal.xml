@@ -6,55 +6,46 @@
     android:layout_height="match_parent"
     android:background="@drawable/colorgradient"
     tools:context=".MainActivity">
+
+
     <LinearLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/atendente" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_gravity="center"
+            android:text="Categorias"
+            android:textColor="#FFFF"
+            android:textSize="30dp"/>
 
-            <ImageView
-                android:id="@+id/menu"
-                android:layout_marginTop="5dp"
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:src="@drawable/andrenaruto">
-            </ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="30dp"
-                android:text="Bem-vindo!"
-                android:textColor="#FFFF"
-                android:textSize="30dp">
-
-
-            </TextView>
-
-        </RelativeLayout>
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
             android:rowCount="3">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -70,15 +61,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/carne" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Carnes &amp; Frios"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -88,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -102,27 +93,26 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/bebidas" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Bebidas"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
-
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -136,25 +126,25 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/higiene" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Higiene &amp; Limpeza"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -168,15 +158,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/mercearia" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Mercearia"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -186,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -200,15 +190,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/horti" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Hortifruti"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -218,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="18dp"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="6dp">
 
@@ -232,20 +222,19 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
+                        android:src="@drawable/tudo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
+                        android:text="Geral"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
-
 
     </LinearLayout>
     <RelativeLayout
@@ -259,7 +248,7 @@
         android:id="@+id/mainmenu"
         android:layout_width="280dp"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="@drawable/colorgradientnd"
         android:orientation="vertical"
         android:translationX="-280dp">
 
@@ -278,7 +267,7 @@
             android:layout_marginTop="14dp"
             android:gravity="center"
             android:text="User Name"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="25dp"
             android:textStyle="normal" />
 
@@ -294,7 +283,7 @@
             android:gravity="left|center_vertical"
             android:text="Cadastrar Produto"
             android:textAllCaps="false"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
 
@@ -309,7 +298,7 @@
             android:gravity="left|center_vertical"
             android:text="Listas"
             android:textAllCaps="false"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
         <Button
@@ -325,7 +314,7 @@
             android:gravity="left|center_vertical"
             android:text="Sobre"
             android:textAllCaps="false"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
         <Button
@@ -334,9 +323,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="60dp"
+            android:onClick="btSair"
             android:background="#00000000"
             android:drawablePadding="10dp"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:gravity="left|center_vertical"
             android:text="Sair"
             android:textAllCaps="false"
@@ -349,7 +339,7 @@
             android:layout_marginTop="90dp"
             android:gravity="center"
             android:text="Lista ©"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="16dp"
             android:textStyle="normal" />
 
@@ -360,7 +350,7 @@
             android:layout_marginTop="0dp"
             android:gravity="center"
             android:text="version 0.0.1"
-            android:textColor="#757575"
+            android:textColor="#FFFFFF"
             android:textSize="14dp"
             android:textStyle="normal" />
 

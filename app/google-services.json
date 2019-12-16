@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "778238287310",
+    "firebase_url": "https://listacompras-ab20b.firebaseio.com",
+    "project_id": "listacompras-ab20b",
+    "storage_bucket": "listacompras-ab20b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778238287310:android:c092c8989189d54a831f9f",
+        "android_client_info": {
+          "package_name": "com.example.nossalista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778238287310-1n0qvbbo4c9kl352op49f50k4nrurgud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nossalista",
+            "certificate_hash": "49af46f62b60f80396e831fce02206fdcf9520b0"
+          }
+        },
+        {
+          "client_id": "778238287310-9m3l9dnk931unr7i1sun9sncvg98qiq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIm0UrifupH05KBoe2qgFh17IldF09-V8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778238287310-9m3l9dnk931unr7i1sun9sncvg98qiq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
