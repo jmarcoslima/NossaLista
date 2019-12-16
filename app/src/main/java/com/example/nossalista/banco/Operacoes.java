@@ -23,7 +23,7 @@ public class Operacoes {
         db = b.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
-        cv.put(b.COLUMN_NAME_CATEGORIA, nome);
+        cv.put(b.NOME_CATEGORIA, nome);
 
         db.insert(b.TABLE_CATEGORIA, null, cv);
     }
@@ -32,7 +32,7 @@ public class Operacoes {
 
         db = b.getReadableDatabase();
 
-        String selection = b.COLUMN_ID_CATEGORIA + " = ?";
+        String selection = b.ID_CATEGORIA + " = ?";
         String[] selectionArgs = {id};
 
         Cursor cursor = db.query(b.TABLE_CATEGORIA,
@@ -46,10 +46,10 @@ public class Operacoes {
         cursor.moveToNext();
 
         String nome = cursor.getString
-                (cursor.getColumnIndex(b.COLUMN_NAME_CATEGORIA));
+                (cursor.getColumnIndex(b.NOME_CATEGORIA));
 
         long id2 = cursor.getLong(
-                cursor.getColumnIndex(b.COLUMN_ID_CATEGORIA));
+                cursor.getColumnIndex(b.ID_CATEGORIA));
 
         return new Categoria(nome, id2);
     }
@@ -58,7 +58,7 @@ public class Operacoes {
 
         SQLiteDatabase db = b.getWritableDatabase();
 
-        String selection = b.COLUMN_ID_CATEGORIA + " LIKE ?";
+        String selection = b.ID_CATEGORIA + " LIKE ?";
 
         String[] selectionArgs = {id};
 
