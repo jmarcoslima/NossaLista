@@ -17,6 +17,7 @@ import com.example.nossalista.Classes.ListaProdutosActivity;
 import com.example.nossalista.Classes.NavigationDrawerb;
 import com.example.nossalista.Classes.Swipe;
 
+
 public class MainActivity extends AppCompatActivity {
     RelativeLayout embacar;
     LinearLayout maincontent,mainmenu;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Animation fromtop, frombottom;
     TextView nomeUser, tituloSobre, version;
     Button btListas, btCadastro, btSobre, btSair;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void abrirMenu() {
@@ -117,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
         avatar.startAnimation(fromtop);
         nomeUser.startAnimation(fromtop);
         email.startAnimation(fromtop);
+=======
+
+>>>>>>> Stashed changes
 
 
        */
@@ -127,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         mainmenu.animate().translationX(-800);
         embacar.setX(1600);
     }
+
 
 
     private void swipeMenu() {
@@ -153,7 +161,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         });
-    }
 
+
+    }
 }
 
