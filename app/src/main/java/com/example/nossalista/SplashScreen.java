@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
      * Mostrando a splash screen
      * Chamando a animacao da imagem
      * Ultilizando O Handler para fazer um encadeamento de Menssagem/Metodo
-     * Ultilizando o Runnable para iniciar outra tarefa, no caso Mostra a MainActivity
+     * Ultilizando o Runnable para iniciar outra tarefa, no caso Mostra a ListaProdutosActivity
      * @param savedInstanceState
      * @return void
      * @author  Eduarda <eduarda.jen@gmail.com>

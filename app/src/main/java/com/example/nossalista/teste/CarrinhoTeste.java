@@ -10,9 +10,12 @@ import java.util.ArrayList;
 public class CarrinhoTeste {
 
     private static ArrayList<Categoria> categorias = new ArrayList<Categoria>();
-    private static ArrayList<Produto> produtos = new ArrayList<Produto>();
+    public static ArrayList<Produto> produtos = new ArrayList<Produto>();
 
     private static Carrinho c1, c2, c3;
+
+    public CarrinhoTeste() {
+    }
 
     static {
 

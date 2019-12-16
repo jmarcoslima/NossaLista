@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/colorgradient"
-    tools:context=".PrincipalActivity">
-
+    tools:context=".MainActivity">
     <LinearLayout
-        android:id="@+id/principal"
+        android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -60,6 +59,8 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+                    android:id="@+id/card1"
+                    android:onClick="iniciaLista"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -243,74 +244,126 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="18dp"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="18dp"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/andrenaruto" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Teste de Card"
-                        android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
         </GridLayout>
 
 
     </LinearLayout>
-</ScrollView>
+    <RelativeLayout
+        android:translationX="-600dp"
+        android:id="@+id/embacar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#75000000"
+        ></RelativeLayout>
+    <LinearLayout
+        android:id="@+id/mainmenu"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:translationX="-280dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="165dp"
+            android:layout_height="133dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/andrenaruto"/>
+
+        <TextView
+            android:id="@+id/nomeUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="User Name"
+            android:textColor="#757575"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+
+        <Button
+            android:id="@+id/btCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:background="#00FFFFFF"
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:text="Cadastrar Produto"
+            android:textAllCaps="false"
+            android:textColor="#757575"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/btListas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFEFE"
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:text="Listas"
+            android:textAllCaps="false"
+            android:textColor="#757575"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btSobre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFFFF"
+            android:clickable="true"
+
+            android:drawablePadding="10dp"
+            android:gravity="left|center_vertical"
+            android:text="Sobre"
+            android:textAllCaps="false"
+            android:textColor="#757575"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:background="#00000000"
+            android:drawablePadding="10dp"
+            android:textColor="#757575"
+            android:gravity="left|center_vertical"
+            android:text="Sair"
+            android:textAllCaps="false"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tituloSobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:text="Lista ©"
+            android:textColor="#757575"
+            android:textSize="16dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:text="version 0.0.1"
+            android:textColor="#757575"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+</FrameLayout>
