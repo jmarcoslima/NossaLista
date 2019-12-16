@@ -1,10 +1,11 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.entidades;
 
 public class Produto {
 
     private long id;
     private String nome;
     private Categoria categoria;
+    private Usuario usuario;
 
     public Produto(){
 
@@ -38,5 +39,13 @@ public class Produto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.nossalista.Classes.Categoria;
+import com.example.nossalista.entidades.Categoria;
 
 public class Operacoes {
 
@@ -65,9 +65,22 @@ public class Operacoes {
         return db.delete(b.TABLE_CATEGORIA, selection, selectionArgs);
     }
 
-    public void update(String id){
+    public void update(String id, String nome){
 
+        SQLiteDatabase db = b.getWritableDatabase();
 
+        ContentValues cv = new ContentValues();
+        cv.put(b.NOME_CATEGORIA, nome);
+
+        String selection = b.ID_CATEGORIA + " LIKE ?";
+        String[] selectionArgs = {id};
+
+        int linhasAfetadas = db.update(
+            b.TABLE_CATEGORIA,
+            cv,
+            selection,
+            selectionArgs
+        );
     }
 
 

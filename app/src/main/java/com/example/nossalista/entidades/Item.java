@@ -1,4 +1,4 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.entidades;
 
 public class Item {
 

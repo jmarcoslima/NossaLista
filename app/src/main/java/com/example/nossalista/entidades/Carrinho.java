@@ -1,4 +1,4 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.entidades;
 
 import java.util.ArrayList;
 
@@ -6,6 +6,7 @@ public class Carrinho {
 
     private long id;
     private ArrayList<Item> items;
+    private Usuario usuario;
 
     public Carrinho(){
 
@@ -30,5 +31,13 @@ public class Carrinho {
 
     public void setItems(ArrayList<Item> items) {
         this.items = items;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

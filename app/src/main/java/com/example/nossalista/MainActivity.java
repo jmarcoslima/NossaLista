@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.nossalista.Classes.Categoria;
+import com.example.nossalista.entidades.Categoria;
 import com.example.nossalista.banco.Operacoes;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         //String s =  op.select("1");
         Categoria c = op.select("2");
+        op.update("2", "Carnes & Frios");
 
         tv.setText(c.getNome());
     }

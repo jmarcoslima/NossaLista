@@ -1,9 +1,9 @@
 package com.example.nossalista.teste;
 
-import com.example.nossalista.Classes.Carrinho;
-import com.example.nossalista.Classes.Categoria;
-import com.example.nossalista.Classes.Item;
-import com.example.nossalista.Classes.Produto;
+import com.example.nossalista.entidades.Carrinho;
+import com.example.nossalista.entidades.Categoria;
+import com.example.nossalista.entidades.Item;
+import com.example.nossalista.entidades.Produto;
 
 import java.util.ArrayList;
 
