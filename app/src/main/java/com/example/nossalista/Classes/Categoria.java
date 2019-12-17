@@ -1,8 +1,12 @@
 package com.example.nossalista.Classes;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 
 import com.example.nossalista.banco.Banco;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Categoria implements Comunicador{
 
@@ -60,5 +64,23 @@ public class Categoria implements Comunicador{
     public String getColunaID() {
 
         return Banco.ID_CATEGORIA;
+    }
+
+    @Override
+    public List pegaTudo() {
+
+        List<Categoria> categorias = new ArrayList<Categoria>();
+
+        Cursor cursor = gw.getDatabase().rawQuery("SELECT * FROM Clientes", null);
+        while(cursor.moveToNext()){
+            int id = cursor.getInt(cursor.getColumnIndex("ID"));
+            String nome = cursor.getString(cursor.getColumnIndex("Nome"));
+            String sexo = cursor.getString(cursor.getColumnIndex("Sexo"));
+            String uf = cursor.getString(cursor.getColumnIndex("UF"));
+            boolean vip = cursor.getInt(cursor.getColumnIndex("Vip")) > 0;
+            categorias.add(new Categoria(id, nome, sexo, uf, vip));
+        }
+        cursor.close();
+        return clientes;
     }
 }

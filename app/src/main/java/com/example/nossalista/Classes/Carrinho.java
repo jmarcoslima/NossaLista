@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import com.example.nossalista.banco.Banco;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Carrinho implements Comunicador{
 
@@ -49,5 +50,10 @@ public class Carrinho implements Comunicador{
     @Override
     public String getColunaID() {
         return Banco.ID_CARRINHO;
+    }
+
+    @Override
+    public List pegaTudo() {
+        return null;
     }
 }
