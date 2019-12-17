@@ -25,7 +25,7 @@ public class ListaProdutosActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
-        rv.setAdapter(new ListaAdapter(CarrinhoTeste.getProdutos()));
+        rv.setAdapter(new ListaAdapter(this));
     }
 
     /*private List<Produto> adicionarProdutos(){

@@ -1,5 +1,6 @@
 package com.example.nossalista.Classes;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nossalista.R;
+import com.example.nossalista.banco.Banco;
 
 import java.util.List;
 
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHolder> {
 
     private List<Produto> produtos;
+    private Banco mydb;
 
-    public ListaAdapter(List<Produto> produtos) {
-        this.produtos = produtos;
+    public ListaAdapter(Context context) {
+
+        this.mydb = new Banco(context);
     }
 
     @NonNull

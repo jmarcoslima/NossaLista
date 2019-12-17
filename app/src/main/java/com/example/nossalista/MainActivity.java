@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.nossalista.Classes.ListaProdutosActivity;
 import com.example.nossalista.Classes.NavigationDrawerb;
 import com.example.nossalista.Classes.Swipe;
+import com.example.nossalista.banco.ConexaoFB;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -133,6 +134,12 @@ public class MainActivity extends AppCompatActivity {
         //maincontent.animate().translationX(-800);
         mainmenu.animate().translationX(-800);
         embacar.setX(1600);
+    }
+
+    private void btSair(View view){
+        ConexaoFB.logOut();
+        finish();
+
     }
 
 

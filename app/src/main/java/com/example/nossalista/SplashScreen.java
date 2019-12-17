@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nossalista.teste.LoginActivity;
+
 /**
  * Classe para a splash screen
  * Colocando todos os métodos que vou ultilizar na activity
@@ -59,7 +61,7 @@ public class SplashScreen extends AppCompatActivity {
      */
     private void iniciaMain() {
         Intent intent = new Intent(
-                SplashScreen.this, MainActivity.class
+                SplashScreen.this, LoginActivity.class
         );
         startActivity(intent);
         finish();
