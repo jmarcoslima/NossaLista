@@ -1,6 +1,11 @@
 package com.example.nossalista.Classes;
 
-public class Produto {
+import android.content.ContentValues;
+import android.database.Cursor;
+
+import com.example.nossalista.banco.Banco;
+
+public class Produto implements Comunicador{
 
     private long id;
     private String nome;
@@ -39,4 +44,34 @@ public class Produto {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    @Override
+    public String getTabela() {
+
+        return Banco.TABLE_PRODUTO;
+    }
+
+    @Override
+    public ContentValues passarInfoParaInsert() {
+
+        ContentValues cv = new ContentValues();
+
+        cv.put(Banco.NOME_PRODUTO, getNome());
+        cv.put(Banco.FK_CATEGORIA, getCategoria().getId());
+
+        return cv;
+    }
+
+    @Override
+    public String getParamSelect() {
+
+        return Banco.ID_PRODUTO;
+    }
+
+    @Override
+    public String getColunaID() {
+
+        return Banco.ID_PRODUTO;
+    }
+
 }
