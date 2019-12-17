@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NossaLista</string>
+    <string-array name="planets_array">
+        <item>Selecionar Categoria</item>
+        <item>Ordem Alfabética</item>
+        <item>Ordem de Z-A</item>
+        <item>Verduras</item>
+        <item>Frutas</item>
+
+    </string-array>
 </resources>
