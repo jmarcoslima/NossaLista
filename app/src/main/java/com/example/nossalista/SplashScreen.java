@@ -77,7 +77,7 @@ public class SplashScreen extends AppCompatActivity {
         Animation AparecerTitulo = AnimationUtils.loadAnimation(this, R.anim.moveimage);
         image.startAnimation(AparecerTitulo);
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.explos);
-        findViewById(R.id.tx).startAnimation(animation);
+        //findViewById(R.id.tx).startAnimation(animation);
     }
 
 

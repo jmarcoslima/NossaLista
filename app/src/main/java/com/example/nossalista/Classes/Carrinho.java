@@ -18,6 +18,8 @@ public class Carrinho implements Comunicador{
         this.idUsuario = idUsuario;
     }
 
+
+
     public long getId() {
         return id;
     }

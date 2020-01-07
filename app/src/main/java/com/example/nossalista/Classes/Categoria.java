@@ -19,6 +19,12 @@ public class Categoria implements Comunicador{
         this.id = id;
     }
 
+    public Categoria(String nome){
+
+        this.nome = nome;
+
+    }
+
     public Categoria(){
 
     }
@@ -70,6 +76,7 @@ public class Categoria implements Comunicador{
     public List pegaTudo() {
 
         List<Categoria> categorias = new ArrayList<Categoria>();
+        /*
 
         Cursor cursor = gw.getDatabase().rawQuery("SELECT * FROM Clientes", null);
         while(cursor.moveToNext()){
@@ -81,6 +88,7 @@ public class Categoria implements Comunicador{
             categorias.add(new Categoria(id, nome, sexo, uf, vip));
         }
         cursor.close();
-        return clientes;
+         */
+        return null;
     }
 }

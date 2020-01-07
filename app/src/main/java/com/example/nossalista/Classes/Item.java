@@ -4,6 +4,8 @@ import android.content.ContentValues;
 
 import com.example.nossalista.banco.Banco;
 
+import java.util.List;
+
 public class Item implements Comunicador{
 
     private Produto produto;
@@ -59,5 +61,10 @@ public class Item implements Comunicador{
     @Override
     public String getColunaID() {
         return Banco.ID_ITEM;
+    }
+
+    @Override
+    public List pegaTudo() {
+        return null;
     }
 }

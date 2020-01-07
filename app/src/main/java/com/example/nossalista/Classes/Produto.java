@@ -5,6 +5,8 @@ import android.database.Cursor;
 
 import com.example.nossalista.banco.Banco;
 
+import java.util.List;
+
 public class Produto implements Comunicador{
 
     private long id;
@@ -72,6 +74,11 @@ public class Produto implements Comunicador{
     public String getColunaID() {
 
         return Banco.ID_PRODUTO;
+    }
+
+    @Override
+    public List pegaTudo() {
+        return null;
     }
 
 }

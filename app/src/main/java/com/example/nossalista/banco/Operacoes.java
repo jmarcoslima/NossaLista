@@ -47,8 +47,6 @@ public class Operacoes {
         return cursor;
     }
 
-
-
     public int delete(Comunicador c){
 
         SQLiteDatabase db = b.getWritableDatabase();

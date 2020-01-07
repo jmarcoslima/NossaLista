@@ -41,9 +41,6 @@ public class CarrinhoTeste {
             itens3.add(new Item(produtos.get(i), i));
         }
 
-        c1 = new Carrinho(itens1);
-        c2 = new Carrinho(itens2);
-        c3 = new Carrinho(itens3);
     }
 
     public static ArrayList<Categoria> getCategorias() {
