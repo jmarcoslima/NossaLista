@@ -2,19 +2,27 @@ package com.example.nossalista.Classes;
 
 import android.content.ContentValues;
 
-import com.example.nossalista.banco.Banco;
-
 import java.util.List;
 
-public class Item implements Comunicador{
+public class Item{
 
+    private Integer id, fk;
     private Produto produto;
     private float qtd;
 
-    public Item(Produto produto, float qtd){
+    public Item(Produto produto, float qtd, Integer id,
+                Integer fk){
 
         this.produto = produto;
         this.qtd = qtd;
+        this.id = id;
+        this.fk = fk;
+    }
+
+    public Item(Produto produto){
+
+        this.produto = produto;
+        this.fk = produto.getId();
     }
 
     public Item(){
@@ -37,34 +45,19 @@ public class Item implements Comunicador{
         this.qtd = qtd;
     }
 
-    @Override
-    public String getTabela() {
-        return Banco.TABLE_ITEM;
+    public Integer getId() {
+        return id;
     }
 
-    @Override
-    public ContentValues passarInfoParaInsert() {
-
-        ContentValues cv = new ContentValues();
-
-        cv.put(Banco.QTD_ITEM, getQtd());
-        cv.put(Banco.FK_PRODUTO, produto.getId());
-
-        return cv;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    @Override
-    public String getParamSelect() {
-        return Banco.FK_CARRINHO;
+    public Integer getFk() {
+        return fk;
     }
 
-    @Override
-    public String getColunaID() {
-        return Banco.ID_ITEM;
-    }
-
-    @Override
-    public List pegaTudo() {
-        return null;
+    public void setFk(Integer fk) {
+        this.fk = fk;
     }
 }

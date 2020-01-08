@@ -2,60 +2,39 @@ package com.example.nossalista.Classes;
 
 import android.content.ContentValues;
 
-import com.example.nossalista.banco.Banco;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Carrinho implements Comunicador{
+public class Carrinho {
 
-    private long id;
-    private long idUsuario;
+    private Integer id;
+    private List<Item> itens;
 
-    public Carrinho(long id, long idUsuario){
+    public Carrinho(Integer id){
 
         this.id = id;
-        this.idUsuario = idUsuario;
+        //this.itens = new List<Item>;
     }
 
+    public Carrinho(Integer id, List<Item> itens){
 
+        this.id = id;
+        this.itens = itens;
+    }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    @Override
-    public String getTabela() {
-
-        return Banco.TABLE_CARRINHO;
+    public List<Item> getItens() {
+        return itens;
     }
 
-    @Override
-    public ContentValues passarInfoParaInsert() {
-
-        ContentValues cv = new ContentValues();
-
-        cv.put(Banco.FK_USUARIO_C, idUsuario);
-
-        return cv;
-    }
-
-    @Override
-    public String getParamSelect() {
-        return Banco.ID_CARRINHO;
-    }
-
-    @Override
-    public String getColunaID() {
-        return Banco.ID_CARRINHO;
-    }
-
-    @Override
-    public List pegaTudo() {
-        return null;
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
 }

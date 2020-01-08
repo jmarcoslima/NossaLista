@@ -1,33 +1,31 @@
 package com.example.nossalista.Classes;
 
 import android.content.ContentValues;
-import android.database.Cursor;
-
-import com.example.nossalista.banco.Banco;
 
 import java.util.List;
 
-public class Produto implements Comunicador{
+public class Produto{
 
-    private long id;
+    private Integer id;
     private String nome;
-    private Categoria categoria;
+    private String categoria, uri;
 
     public Produto(){
 
     }
 
-    public Produto(String nome, Categoria categoria){
+    public Produto(String nome, String categoria, String uri){
 
         this.nome = nome;
         this.categoria = categoria;
+        this.uri = uri;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,46 +37,20 @@ public class Produto implements Comunicador{
         this.nome = nome;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    @Override
-    public String getTabela() {
-
-        return Banco.TABLE_PRODUTO;
+    public String getUri() {
+        return uri;
     }
 
-    @Override
-    public ContentValues passarInfoParaInsert() {
-
-        ContentValues cv = new ContentValues();
-
-        cv.put(Banco.NOME_PRODUTO, getNome());
-        cv.put(Banco.FK_CATEGORIA, getCategoria().getId());
-
-        return cv;
-    }
-
-    @Override
-    public String getParamSelect() {
-
-        return Banco.ID_PRODUTO;
-    }
-
-    @Override
-    public String getColunaID() {
-
-        return Banco.ID_PRODUTO;
-    }
-
-    @Override
-    public List pegaTudo() {
-        return null;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
 }

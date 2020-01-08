@@ -1,54 +1,121 @@
 package com.example.nossalista;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.nossalista.Classes.CadastroProdutoActivity;
 import com.example.nossalista.Classes.ListaProdutosActivity;
 import com.example.nossalista.Classes.NavigationDrawerb;
+import com.example.nossalista.Classes.Produto;
 import com.example.nossalista.Classes.Swipe;
 import com.example.nossalista.banco.ConexaoFB;
 
 
 public class MainActivity extends AppCompatActivity {
+
     RelativeLayout embacar;
     LinearLayout maincontent,mainmenu;
     ImageView btnMenu,avatar;
     Animation fromtop, frombottom;
     TextView nomeUser, tituloSobre, version;
     Button btListas, btCadastro, btSobre, btSair;
-
-
+    private String categoria;
+    private CardView cardCarne, cardBebida, cardHL, cardMercearia,
+            cardHortifruti, cardGeral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         NavigationDrawerb nd = new NavigationDrawerb(this);
-        LinearLayout card1 = findViewById(R.id.card1);
 
         instanciarViews();
         chamarBarra();
         swipeMenu();
 
+        cardCarne = findViewById(R.id.cardCarne);
+        cardBebida = findViewById(R.id.cardBebida);
+        cardHL = findViewById(R.id.cardHL);
+        cardMercearia = findViewById(R.id.cardMercearia);
+        cardHortifruti = findViewById(R.id.cardHortifruti);
+        cardGeral = findViewById(R.id.cardGeral);
 
 
+
+        cardCarne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.carneefrios);
+                iniciaLista();
+            }
+        });
+
+        cardBebida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.bebidas);
+                iniciaLista();
+            }
+        });
+
+        cardHL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.higieneelimpeza);
+                iniciaLista();
+            }
+        });
+
+        cardMercearia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.mercearia);
+                iniciaLista();
+            }
+        });
+
+        cardHortifruti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.hortifruti);
+                iniciaLista();
+            }
+        });
+
+        cardGeral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.geral);
+                iniciaLista();
+            }
+        });
     }
 
 
-    public void iniciaLista(View view){
-        Intent intent = new Intent(this, ListaProdutosActivity.class);
-        startActivity(intent);
+    public void iniciaLista(){
 
+        Intent intent = new Intent(this, ListaProdutosActivity.class);
+        intent.putExtra("categoria", categoria);
+        startActivity(intent);
     }
 
     private void instanciarViews() {
@@ -98,6 +165,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void telaCadastro(View view) {
+        Intent i = new Intent(this, CadastroProdutoActivity.class);
+        startActivity(i);
+
+    }
+
 
     private void abrirMenu() {
         maincontent.animate().translationX(0);
@@ -141,8 +214,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
-
-
 
     private void swipeMenu() {
 

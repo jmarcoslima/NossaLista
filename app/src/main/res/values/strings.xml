@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">NossaLista</string>
     <string name="title_activity_lista_card_view">ListaCardView</string>
+
+    <string name="carneefrios">Carne &amp; frios</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="higieneelimpeza">Higiene &amp; Limpeza</string>
+    <string name="mercearia">Mercearia</string>
+    <string name="hortifruti">Hortifruti</string>
+    <string name="geral">Geral</string>
+
+        <string-array name="categorias_array">
+            <item>
+                @string/carneefrios
+            </item>
+            <item>
+                @string/higieneelimpeza
+            </item>
+            <item>
+                @string/mercearia
+            </item>
+            <item>
+                @string/hortifruti
+            </item>
+            <item>
+                @string/geral
+            </item>
+            <item>
+                @string/bebidas
+            </item>
+        </string-array>
+
 </resources>
