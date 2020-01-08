@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">NossaLista</string>
     <string name="title_activity_lista_card_view">ListaCardView</string>
+    <string name="title_activity_lista_final">ListaFinal</string>
 </resources>
