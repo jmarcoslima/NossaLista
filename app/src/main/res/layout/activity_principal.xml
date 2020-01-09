@@ -304,7 +304,7 @@
 
 
         <Button
-            android:id="@+id/btListas"
+            android:id="@+id/btCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -312,10 +312,11 @@
             android:background="#00FFFEFE"
             android:drawablePadding="10dp"
             android:gravity="left|center_vertical"
-            android:text="Listas"
+            android:text="Carrinho"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="iniciaCarrinho"/>
 
         <Button
             android:id="@+id/btSobre"

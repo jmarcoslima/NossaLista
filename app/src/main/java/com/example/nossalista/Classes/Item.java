@@ -60,4 +60,10 @@ public class Item{
     public void setFk(Integer fk) {
         this.fk = fk;
     }
+
+    @Override
+    public String toString(){
+
+        return getProduto().toString();
+    }
 }

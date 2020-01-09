@@ -7,19 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.nossalista.Classes.CadastroProdutoActivity;
+import com.example.nossalista.Classes.CarrinhoActivity;
 import com.example.nossalista.Classes.ListaProdutosActivity;
 import com.example.nossalista.Classes.NavigationDrawerb;
-import com.example.nossalista.Classes.Produto;
 import com.example.nossalista.Classes.Swipe;
 import com.example.nossalista.banco.ConexaoFB;
 
@@ -118,9 +115,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void iniciaCarrinho(View view){
+
+        Intent intent = new Intent(this, CarrinhoActivity.class);
+        startActivity(intent);
+    }
+
+
     private void instanciarViews() {
         //Button
-        btListas = findViewById(R.id.btListas);
+        btListas = findViewById(R.id.btCarrinho);
         btCadastro = findViewById(R.id.btCadastro);
         btSobre = findViewById(R.id.btSobre);
         btSair = findViewById(R.id.btSair);

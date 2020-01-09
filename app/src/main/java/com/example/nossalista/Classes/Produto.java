@@ -53,4 +53,10 @@ public class Produto{
         this.uri = uri;
     }
 
+    @Override
+    public String toString(){
+
+        return nome + ", " + id;
+    }
+
 }

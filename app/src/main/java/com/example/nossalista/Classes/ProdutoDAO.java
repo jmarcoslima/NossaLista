@@ -29,6 +29,12 @@ public class ProdutoDAO {
 
     }
 
+    public void insereProdutos(List<Produto> produtos){
+
+        for (int i = 0; i < produtos.size(); i++)
+            inserirProduto(produtos.get(i));
+    }
+
     public List<Produto> meDAOsProdutos(String categoria) {
 
         String selection = "categoria" + " = ?";
@@ -47,6 +53,24 @@ public class ProdutoDAO {
             produtos.add(p);
         }
 
+
+        return produtos;
+    }
+
+    public List<Produto> meDAOsProdutos() {
+
+        List<Produto> produtos = new ArrayList<>();
+
+        Cursor cursor = banco.query("produto", new String[]{"id", "nome","uri","categoria"},
+                null, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            Produto p = new Produto();
+            p.setId(cursor.getInt(0));
+            p.setNome(cursor.getString(1));
+            p.setUri(cursor.getString(2));
+            produtos.add(p);
+        }
 
         return produtos;
     }

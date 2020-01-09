@@ -9,25 +9,25 @@
     <string name="hortifruti">Hortifruti</string>
     <string name="geral">Geral</string>
 
-        <string-array name="categorias_array">
+    <string-array name="categorias_array">
             <item>
                 @string/carneefrios
             </item>
-            <item>
+        <item>
                 @string/higieneelimpeza
             </item>
-            <item>
+        <item>
                 @string/mercearia
             </item>
-            <item>
+        <item>
                 @string/hortifruti
             </item>
-            <item>
+        <item>
                 @string/geral
             </item>
-            <item>
+        <item>
                 @string/bebidas
             </item>
-        </string-array>
+    </string-array>
 
 </resources>

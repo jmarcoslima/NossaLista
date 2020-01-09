@@ -2,12 +2,14 @@ package com.example.nossalista.Classes;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,8 +61,9 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
         private ImageView imageFoto;
         private ImageButton btnAdd, btnDel;
 
-        public ListaViewHolder(@NonNull View itemView) {
+        public ListaViewHolder(@NonNull final View itemView) {
             super(itemView);
+
             textNome = itemView.findViewById(R.id.nome);
             imageFoto = itemView.findViewById(R.id.fotoproduto);
 
@@ -74,8 +77,11 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                     int index = getAdapterPosition();
                     Produto p = produtos.get(index);
 
-                    Item i = new Item(p);
+                    ItemDAO itemDAO = new ItemDAO(itemView.getContext());
+                    itemDAO.inserirItem(new Item(p));
 
+                    Toast.makeText(itemView.getContext(), p.getId().toString()
+                            , Toast.LENGTH_SHORT).show();
 
                 }
             });
