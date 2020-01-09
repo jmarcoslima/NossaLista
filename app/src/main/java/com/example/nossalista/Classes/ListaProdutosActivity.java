@@ -12,6 +12,8 @@ import com.example.nossalista.teste.CarrinhoTeste;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.example.nossalista.teste.CarrinhoTeste.produtos;
+
 public class ListaProdutosActivity extends AppCompatActivity {
     RecyclerView rv;
 
@@ -25,7 +27,10 @@ public class ListaProdutosActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
-        rv.setAdapter(new ListaAdapter(this));
+       // rv.setAdapter(new ListaAdapter(produtos));
+
+
+
     }
 
     /*private List<Produto> adicionarProdutos(){

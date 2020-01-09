@@ -1,6 +1,5 @@
 package com.example.nossalista.Classes;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nossalista.R;
 import com.example.nossalista.banco.Banco;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHolder> {
 
-    private List<Produto> produtos;
+    private List<TesteProduto> produtos;
+
     private Banco mydb;
 
-    public ListaAdapter(Context context) {
+    public ListaAdapter(List<TesteProduto> produtos) {
+        this.produtos = produtos;
 
-        this.mydb = new Banco(context);
     }
+
 
     @NonNull
     @Override
@@ -49,6 +51,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
         private TextView textNome;
         private ImageView imageFoto;
 
+
         public ListaViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -56,5 +59,9 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
             imageFoto = itemView.findViewById(R.id.fotoproduto);
 
         }
+
+
     }
+
+
 }
