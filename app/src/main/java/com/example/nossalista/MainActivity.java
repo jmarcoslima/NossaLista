@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         instanciarViews();
         chamarBarra();
         swipeMenu();
-
-
+        btSair();
+        btnLista();
 
     }
 
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     private void abrirMenu() {
@@ -135,12 +136,33 @@ public class MainActivity extends AppCompatActivity {
         mainmenu.animate().translationX(-800);
         embacar.setX(1600);
     }
-
-    private void btSair(View view){
-        ConexaoFB.logOut();
-        finish();
+    /*
+    * Chamando a Activity ListaCardView através do Intent com um clickView
+     */
+    private  void btnLista(){
+        btListas = findViewById(R.id.btListas);
+        btListas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListaCardView.class);
+                startActivity(intent);
+            }
+        });
 
     }
+    private void btSair(){
+        btSair = findViewById(R.id.btSair);
+        btSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConexaoFB.logOut();
+                finish();
+            }
+        });
+
+    }
+
+
 
 
 
