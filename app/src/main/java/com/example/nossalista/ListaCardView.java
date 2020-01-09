@@ -29,7 +29,6 @@ import java.util.List;
 public class ListaCardView extends AppCompatActivity  {
     LinearLayout l;
     View v;
-//hsdi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
