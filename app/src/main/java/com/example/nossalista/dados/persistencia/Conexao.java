@@ -1,10 +1,8 @@
-package com.example.nossalista.banco;
+package com.example.nossalista.dados.persistencia;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.Nullable;
 
 public class Conexao extends SQLiteOpenHelper {
 
@@ -22,19 +20,17 @@ public class Conexao extends SQLiteOpenHelper {
                 "nome VARCHAR(50)," +
                 "uri VARCHAR(75)," +
                 "categoria VARCHAR(50))");
+
+        db.execSQL("CREATE TABLE item (" +
+                "idItem INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "fkProduto INTEGER," +
+                "qtd INTEGER," +
+                "FOREIGN KEY(fkProduto) REFERENCES produto)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,
                           int newVersion) {
-
-        if (oldVersion < 2)
-            db.execSQL("CREATE TABLE item (" +
-                    "idItem INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "fkProduto INTEGER," +
-                    "qtd INTEGER," +
-                    "FOREIGN KEY(fkProduto) REFERENCES produto)");
-
 
     }
 }

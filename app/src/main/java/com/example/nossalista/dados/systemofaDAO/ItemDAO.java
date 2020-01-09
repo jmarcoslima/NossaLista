@@ -1,11 +1,13 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.dados.systemofaDAO;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.nossalista.banco.Conexao;
+import com.example.nossalista.dados.persistencia.Conexao;
+import com.example.nossalista.entidades.Item;
+import com.example.nossalista.entidades.Produto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +25,11 @@ public class ItemDAO {
 
     public long inserirItem(Item i) {
 
+        if (pegaFkProduto(i.getFkProduto()) > 0)
+            return -1;
+
         ContentValues values = new ContentValues();
-        values.put("fkProduto", i.getFk());
+        values.put("fkProduto", i.getFkProduto());
 
         return banco.insert("item", null, values);
     }
@@ -48,24 +53,25 @@ public class ItemDAO {
 
             Item i = new Item();
             i.setId(cursor.getInt(0));
-            i.setFk(cursor.getInt(1));
+            i.setFkProduto(cursor.getInt(1));
             itens.add(i);
         }
 
         return itens;
     }
 
-    public List<Produto> listar(List<Item> itens){
+    public List<Produto> listar(){
 
         String selection = "id" + " = ?";
         String[] selectionArgs = new String[1];
         Cursor cursor;
 
+        List<Item> itens = meDAOsItens();
         List<Produto> produtos = new ArrayList<>();
 
         for (int i = 0; i < itens.size(); i++) {
 
-            selectionArgs[0] = itens.get(i).getFk().toString();
+            selectionArgs[0] = itens.get(i).getFkProduto().toString();
 
             cursor = banco.query("produto", new String[]{"id", "nome","uri"},
                     selection, selectionArgs, null, null, null);
@@ -82,4 +88,24 @@ public class ItemDAO {
         return produtos;
     }
 
+    public void excluir(Produto p){
+
+        if (pegaFkProduto(p.getId()) > 0)
+            banco.delete("item", "fkProduto = ?",
+                new String[]{p.getId().toString()});
+    }
+
+    public Integer pegaFkProduto(Integer idProduto){
+
+        String selection = "fkProduto" + " = ?";
+        String[] selectionArgs = {idProduto.toString()};
+
+        Cursor cursor = banco.query("item", new String[]{"fkProduto"},
+                selection, selectionArgs, null, null, null);
+
+        if (cursor.moveToNext())
+            return cursor.getInt(0);
+
+        return -1;
+    }
 }

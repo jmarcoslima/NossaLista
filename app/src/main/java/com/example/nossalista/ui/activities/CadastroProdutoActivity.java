@@ -1,4 +1,4 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.ui.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,6 +26,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.nossalista.R;
+import com.example.nossalista.entidades.Produto;
+import com.example.nossalista.dados.systemofaDAO.ProdutoDAO;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

@@ -6,10 +6,10 @@ import android.util.Log;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.nossalista.Classes.Item;
-import com.example.nossalista.Classes.ItemDAO;
-import com.example.nossalista.Classes.Produto;
-import com.example.nossalista.Classes.ProdutoDAO;
+import com.example.nossalista.dados.systemofaDAO.ItemDAO;
+import com.example.nossalista.dados.systemofaDAO.ProdutoDAO;
+import com.example.nossalista.entidades.Item;
+import com.example.nossalista.entidades.Produto;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -62,7 +62,7 @@ public class ExampleInstrumentedTest {
 
         for(int i = 0; i < produtos.size(); i++) {
 
-            if (produtos.get(i).getId() == itens.get(i).getFk()){
+            if (produtos.get(i).getId() == itens.get(i).getFkProduto()){
 
                 itens.add(new Item(produtos.get(i)));
                 break;
@@ -104,8 +104,8 @@ public class ExampleInstrumentedTest {
 
         int index = 1;
 
-        Assert.assertEquals(itens.get(index).getFk(),
-                meDAOsItens.get(index).getFk());
+        Assert.assertEquals(itens.get(index).getFkProduto(),
+                meDAOsItens.get(index).getFkProduto());
     }
 
     @Test

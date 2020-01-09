@@ -1,10 +1,9 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -13,9 +12,11 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.example.nossalista.R;
+import com.example.nossalista.ui.uteis.ListaAdapter;
+import com.example.nossalista.entidades.Produto;
+import com.example.nossalista.dados.systemofaDAO.ProdutoDAO;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListaProdutosActivity extends AppCompatActivity {

@@ -1,8 +1,7 @@
-package com.example.nossalista.banco;
+package com.example.nossalista.dados.firebase;
 
 import androidx.annotation.NonNull;
 
-import com.google.firebase.FirebaseAppLifecycleListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

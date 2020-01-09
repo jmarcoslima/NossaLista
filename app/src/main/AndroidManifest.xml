@@ -22,11 +22,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Classes.CarrinhoActivity"></activity>
-        <activity android:name=".teste.RegistroActivity" />
-        <activity android:name=".teste.LoginActivity" />
+        <activity android:name=".ui.activities.CarrinhoActivity"></activity>
+        <activity android:name=".ui.activities.RegistroActivity" />
+        <activity android:name=".ui.activities.LoginActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.uteis.SplashScreen"
             android:label="@string/app_name"
             android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
@@ -35,9 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Classes.CadastroProdutoActivity" />
-        <activity android:name=".Classes.ListaProdutosActivity" />
+        <activity android:name=".ui.activities.MainActivity" />
+        <activity android:name=".ui.activities.CadastroProdutoActivity" />
+        <activity android:name=".ui.activities.ListaProdutosActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

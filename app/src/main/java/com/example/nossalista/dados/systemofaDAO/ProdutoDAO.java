@@ -1,11 +1,12 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.dados.systemofaDAO;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.nossalista.banco.Conexao;
+import com.example.nossalista.dados.persistencia.Conexao;
+import com.example.nossalista.entidades.Produto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,13 @@ public class ProdutoDAO {
 
     private Conexao conexao;
     private SQLiteDatabase banco;
+    private Context context;
 
     public ProdutoDAO(Context context) {
-        conexao = new Conexao(context);
+
+        this.context = context;
+
+        conexao = new Conexao(this.context);
         banco = conexao.getWritableDatabase();
     }
 
@@ -77,7 +82,14 @@ public class ProdutoDAO {
 
 
     public void excluir(Produto p) {
-        banco.delete("produto", "id = ?", new String[]{p.getId().toString()});
+
+        ItemDAO itemDAO = new ItemDAO(this.context);
+
+        if (itemDAO.pegaFkProduto(p.getId()) > 0)
+            itemDAO.excluir(p);
+
+        banco.delete("produto", "id = ?",
+                new String[]{p.getId().toString()});
 
     }
 }

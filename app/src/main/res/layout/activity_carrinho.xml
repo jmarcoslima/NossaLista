@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Classes.CarrinhoActivity">
+    tools:context=".ui.activities.CarrinhoActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
 
         android:layout_margin="20dp"
         android:id="@+id/rvCarrinho"
-        tools:listitem="@layout/item_produto"
+        tools:listitem="@layout/item_carrinho"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

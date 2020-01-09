@@ -1,4 +1,4 @@
-package com.example.nossalista;
+package com.example.nossalista.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -13,12 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.nossalista.Classes.CadastroProdutoActivity;
-import com.example.nossalista.Classes.CarrinhoActivity;
-import com.example.nossalista.Classes.ListaProdutosActivity;
-import com.example.nossalista.Classes.NavigationDrawerb;
-import com.example.nossalista.Classes.Swipe;
-import com.example.nossalista.banco.ConexaoFB;
+import com.example.nossalista.R;
+import com.example.nossalista.ui.uteis.NavigationDrawerb;
+import com.example.nossalista.ui.uteis.Swipe;
+import com.example.nossalista.dados.firebase.ConexaoFB;
 
 
 public class MainActivity extends AppCompatActivity {

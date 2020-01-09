@@ -1,13 +1,34 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.entidades;
 
-import android.content.ContentValues;
-
-import java.util.List;
+/**
+ * Classe criada para "segurar" informações
+ * puxadas do banco ou listas.
+ *
+ * @author Diego <diego.santos@hbsis.com.br></>
+ */
 
 public class Produto{
 
+    /**
+     * Chave primária no banco,
+     * não setar diretamente (o banco usa autoincremento).
+     */
     private Integer id;
+
+    /**
+     *O nome do produto.
+     */
     private String nome;
+
+    /**
+     * Atributo categoria é usado para definir para qual
+     * lista o produto vai. As categorias do produto são setadas
+     * pelo Spinner na activity CadastroProdutoActivity
+     *
+     * A uri é o caminho da imagem do produto, também setado
+     * na activity CadastroProdutoActivity
+     */
+
     private String categoria, uri;
 
     public Produto(){
@@ -52,6 +73,14 @@ public class Produto{
     public void setUri(String uri) {
         this.uri = uri;
     }
+
+    /**
+     * Feito para ver se as operações do banco funcionam.
+     * (ver classe ProdutoDAO no pacote dados/systemofaDAO).
+     *
+     * @author Diego <diego.santos@hbsis.com.br>
+     * @return String
+     */
 
     @Override
     public String toString(){

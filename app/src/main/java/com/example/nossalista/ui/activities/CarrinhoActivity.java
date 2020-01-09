@@ -1,4 +1,4 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.nossalista.R;
+import com.example.nossalista.ui.uteis.CarrinhoAdapter;
+import com.example.nossalista.ui.uteis.ListaAdapter;
+import com.example.nossalista.entidades.Produto;
+import com.example.nossalista.dados.systemofaDAO.ItemDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +19,7 @@ public class CarrinhoActivity extends AppCompatActivity {
 
     private RecyclerView rvCarrinho;
     private ItemDAO dao;
-    private List<Item> itens;
-    private List<Item> itensFiltrados = new ArrayList<>();
+    private List<Produto> produtosSelecionados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +28,14 @@ public class CarrinhoActivity extends AppCompatActivity {
 
         dao = new ItemDAO(this);
         rvCarrinho = findViewById(R.id.rvCarrinho);
-        itens = dao.meDAOsItens();
 
-        itensFiltrados.addAll(itens);
+        produtosSelecionados = new ArrayList<Produto>(dao.listar());
 
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rvCarrinho.setLayoutManager(lm);
-        rvCarrinho.setAdapter(new CarrinhoAdapter(itensFiltrados));
+        rvCarrinho.setAdapter(new CarrinhoAdapter(produtosSelecionados));
 
         registerForContextMenu(rvCarrinho);
-    }
-
-    @Override
-    public void onResume() {
-
-        super.onResume();
-        itens = dao.meDAOsItens();
-        itensFiltrados.clear();
-        itensFiltrados.addAll(itens);
-        rvCarrinho.setAdapter(new CarrinhoAdapter(itensFiltrados));
-
     }
 }
 

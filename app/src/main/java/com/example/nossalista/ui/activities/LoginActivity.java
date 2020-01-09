@@ -1,4 +1,4 @@
-package com.example.nossalista.teste;
+package com.example.nossalista.ui.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.nossalista.MainActivity;
 import com.example.nossalista.R;
-import com.example.nossalista.banco.ConexaoFB;
+import com.example.nossalista.dados.firebase.ConexaoFB;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
