@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidx.cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:androidx.cardview="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
 
     <androidx.cardview.widget.CardView
@@ -31,7 +32,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_alignParentTop="true"
-                android:text="listaMercado"
+                android:text="Lista"
                 android:textSize="30sp" />
 
         </LinearLayout>

@@ -323,7 +323,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="60dp"
-            android:onClick="btSair"
             android:background="#00000000"
             android:drawablePadding="10dp"
             android:textColor="#FFFFFF"
