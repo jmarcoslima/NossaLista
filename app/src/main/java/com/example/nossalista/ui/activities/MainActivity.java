@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void telaCadastro(View view) {
         Intent i = new Intent(this, CadastroProdutoActivity.class);
+        i.putExtra("opcao", 1);
         startActivity(i);
 
     }
@@ -197,9 +198,6 @@ public class MainActivity extends AppCompatActivity {
         avatar.startAnimation(fromtop);
         nomeUser.startAnimation(fromtop);
         email.startAnimation(fromtop);
-=======
-
->>>>>>> Stashed changes
 
 
        */

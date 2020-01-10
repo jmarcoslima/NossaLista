@@ -25,6 +25,16 @@ public class ProdutoDAO {
         banco = conexao.getWritableDatabase();
     }
 
+    public void atualizarProduto(Produto produto) {
+        int id = produto.getId();
+        ContentValues values = new ContentValues();
+        values.put("nome", produto.getNome());
+        values.put("uri",produto.getUri());
+        values.put("categoria",produto.getCategoria());
+        banco.update("produto", values, "id = ?",new
+                String[]{produto.getId().toString()});
+    }
+
     public long inserirProduto(Produto produto) {
         ContentValues values = new ContentValues();
         values.put("nome", produto.getNome());

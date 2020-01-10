@@ -24,7 +24,7 @@
         android:id="@+id/btCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="salvarProduto"
+        android:onClick="salvareditarProduto"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

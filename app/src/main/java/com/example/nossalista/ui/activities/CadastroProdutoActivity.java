@@ -12,12 +12,14 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -39,8 +41,11 @@ public class CadastroProdutoActivity extends AppCompatActivity implements Adapte
     private ProdutoDAO dao;
     private ImageView fotoGaleria;
     private Button btCamera, btGaleria;
-    private String imageUri;
+    private String imageUri,uriEdit;
     private Spinner spinner;
+    private int opcao = 0, idP;
+
+    private Bundle extras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,32 +59,61 @@ public class CadastroProdutoActivity extends AppCompatActivity implements Adapte
         fotoGaleria = findViewById(R.id.fotoGaleria);
 
 
-
         dao = new ProdutoDAO(this);
         fotos();
 
-       spinner = (Spinner) findViewById(R.id.spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+        spinner = (Spinner) findViewById(R.id.spinner);
+        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.categorias_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+        // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+
+        extras = getIntent().getExtras();
+        if (extras != null) {
+            opcao = extras.getInt("opcao");
+        }
+        if(opcao == 0) {
+            nome.setText(extras.getString("nomeP"));
+            spinner.setSelection(adapter.getPosition(extras.getString("categoriaP")));
+            uriEdit = extras.getString("uriP");
+            Bitmap bitmap = BitmapFactory.decodeFile(uriEdit);
+            fotoGaleria.setImageBitmap(bitmap);
+        }
     }
 
-    public void salvarProduto(View view) {
-        Produto p = new Produto();
-        p.setNome(nome.getText().toString());
-        p.setCategoria(spinner.getSelectedItem().toString());
-        //Evita nullPointer ao cadastrar sem imagem da galeria/camera
-        if (imageUri != null) {
-            p.setUri(imageUri);
-        } else {
-            p.setUri("0");
+    public void salvareditarProduto(View view) {
+        if (opcao == 1) {
+            Produto p = new Produto();
+            p.setNome(nome.getText().toString());
+            p.setCategoria(spinner.getSelectedItem().toString());
+            //Evita nullPointer ao cadastrar sem imagem da galeria/camera
+            if (imageUri != null) {
+                p.setUri(imageUri);
+            } else {
+                p.setUri("0");
+            }
+            long id = dao.inserirProduto(p);
+            Toast.makeText(this, "Produto inserido com id:" + id, Toast.LENGTH_SHORT).show();
+
         }
-        long id = dao.inserirProduto(p);
-        Toast.makeText(this, "Produto inserido com id:" + id, Toast.LENGTH_SHORT).show();
+        if(opcao == 0) {
+            Produto p = new Produto();
+            p.setId(extras.getInt("idP"));
+            p.setNome(nome.getText().toString());
+            p.setCategoria(spinner.getSelectedItem().toString());
+            //Evita nullPointer ao cadastrar sem imagem da galeria/camera
+            if (imageUri != null) {
+                p.setUri(imageUri);
+            } else {
+                p.setUri(uriEdit);
+            }
+            dao.atualizarProduto(p);
+            Toast.makeText(this, "Produto atualizado com id:" + p.getId(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void fotos() {

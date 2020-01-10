@@ -3,6 +3,7 @@ package com.example.nossalista.ui.uteis;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -154,7 +155,12 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                      * manda na intent o id do Produto para manipular
                      * ele na outra activity
                      */
-                    i.putExtra("idProduto", p.getId());
+                    Bundle extras = new Bundle();
+                    extras.putInt("idP", p.getId());
+                    extras.putString("nomeP", p.getNome());
+                    extras.putString("uriP",p.getUri());
+                    extras.putString("categoriaP",p.getCategoria());
+                    i.putExtras(extras);
 
                     itemView.getContext().startActivity(i);
                 }
