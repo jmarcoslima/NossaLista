@@ -80,7 +80,15 @@ public class ProdutoDAO {
         return produtos;
     }
 
-
+    /**
+     * Exclui o produto da tabela produto e verifica
+     * se a id dele foi passada como fk para um item da tabela item,
+     * caso sim, o ItemDAO é chamado para remover o item.
+     *
+     * @author Diego <diego.santos@hbsis.com.br>
+     *
+     * @param p produto que vai ser excluido
+     */
     public void excluir(Produto p) {
 
         ItemDAO itemDAO = new ItemDAO(this.context);

@@ -132,13 +132,24 @@ public class CarrinhoAdapter extends RecyclerView.Adapter<CarrinhoAdapter.Carrin
                     ItemDAO itemDAO = new ItemDAO(itemView.getContext());
                     Produto p = produtosSelecionados.get(getAdapterPosition());
 
+                    /**
+                     * exclui da tabela item
+                     */
                     itemDAO.excluir(p);
 
                     Toast.makeText(itemView.getContext(),
                             "Item removido",
                             Toast.LENGTH_SHORT).show();
 
+                    /**
+                     * remove do ArrayList que a RecyclerView usa para inflar
+                     */
                     produtosSelecionados.remove(p);
+
+                    /**
+                     * atualiza a lista, removendo o item que foi excluido
+                     * anteriormente
+                     */
                     notifyDataSetChanged();
                 }
             });

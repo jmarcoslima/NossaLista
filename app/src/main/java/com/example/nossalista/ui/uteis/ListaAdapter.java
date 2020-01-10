@@ -79,6 +79,9 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
             btnDel = itemView.findViewById(R.id.btndel);
             btnEdit = itemView.findViewById(R.id.btnedit);
 
+            /**
+             * Adiciona o produto no carrinho
+             */
             btnAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -87,6 +90,9 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
 
                     ItemDAO itemDAO = new ItemDAO(itemView.getContext());
 
+                    /**
+                     * Caso seja true o item é inserido na tabela.
+                     */
                     if (itemDAO.inserirItem(new Item(p)) > 0) {
 
                         Toast.makeText(itemView.getContext(),
@@ -103,6 +109,9 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                 }
             });
 
+            /**
+             * Remove o produto do carrinho e da lista de produtos.
+             */
             btnDel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -115,11 +124,23 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                             "Produto removido",
                             Toast.LENGTH_SHORT).show();
 
+                    /**
+                     * remove do array que a RecyclerView usa para
+                     * pegar info.
+                     */
                     produtos.remove(p);
+
+                    /**
+                     * Atualiza a RecyclerView, excluindo da tela
+                     * o produto.
+                     */
                     notifyDataSetChanged();
                 }
             });
 
+            /**
+             * Editar.
+             */
             btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -129,6 +150,10 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                     Intent i = new Intent(itemView.getContext(),
                             CadastroProdutoActivity.class);
 
+                    /**
+                     * manda na intent o id do Produto para manipular
+                     * ele na outra activity
+                     */
                     i.putExtra("idProduto", p.getId());
 
                     itemView.getContext().startActivity(i);
@@ -136,6 +161,10 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
             });
         }
 
+        /**
+         *
+         * @return produto que foi clicado.
+         */
         public Produto getProdutoSelecionado(){
 
             return produtos.get(getAdapterPosition());
