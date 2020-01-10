@@ -20,7 +20,7 @@ import com.example.nossalista.dados.systemofaDAO.ProdutoDAO;
 import com.example.nossalista.entidades.Item;
 import com.example.nossalista.entidades.Produto;
 import com.example.nossalista.dados.systemofaDAO.ItemDAO;
-import com.example.nossalista.ui.activities.CadastroProdutoActivity;
+import com.example.nossalista.ui.activities.ManipulaProdutoActivity;
 
 import java.io.File;
 import java.util.List;
@@ -149,7 +149,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                     Produto p = getProdutoSelecionado();
 
                     Intent i = new Intent(itemView.getContext(),
-                            CadastroProdutoActivity.class);
+                            ManipulaProdutoActivity.class);
 
                     /**
                      * manda na intent o id do Produto para manipular

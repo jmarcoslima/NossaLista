@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void telaCadastro(View view) {
-        Intent i = new Intent(this, CadastroProdutoActivity.class);
+        Intent i = new Intent(this, ManipulaProdutoActivity.class);
         i.putExtra("opcao", 1);
         startActivity(i);
 

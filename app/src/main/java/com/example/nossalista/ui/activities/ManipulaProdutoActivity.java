@@ -35,7 +35,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-public class CadastroProdutoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ManipulaProdutoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText nome;
     private ProdutoDAO dao;
@@ -120,8 +120,8 @@ public class CadastroProdutoActivity extends AppCompatActivity implements Adapte
         btCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ActivityCompat.checkSelfPermission(CadastroProdutoActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(CadastroProdutoActivity.this, new String[]{Manifest.permission.CAMERA}, 0);
+                if (ActivityCompat.checkSelfPermission(ManipulaProdutoActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(ManipulaProdutoActivity.this, new String[]{Manifest.permission.CAMERA}, 0);
                 } else {
                     tirarFoto();
                 }
@@ -130,8 +130,8 @@ public class CadastroProdutoActivity extends AppCompatActivity implements Adapte
         btGaleria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ActivityCompat.checkSelfPermission(CadastroProdutoActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(CadastroProdutoActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                if (ActivityCompat.checkSelfPermission(ManipulaProdutoActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(ManipulaProdutoActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
                 } else {
                     abrirGaleria();
                 }

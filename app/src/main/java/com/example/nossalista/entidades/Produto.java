@@ -23,10 +23,10 @@ public class Produto{
     /**
      * Atributo categoria é usado para definir para qual
      * lista o produto vai. As categorias do produto são setadas
-     * pelo Spinner na activity CadastroProdutoActivity
+     * pelo Spinner na activity ManipulaProdutoActivity
      *
      * A uri é o caminho da imagem do produto, também setado
-     * na activity CadastroProdutoActivity
+     * na activity ManipulaProdutoActivity
      */
 
     private String categoria, uri;

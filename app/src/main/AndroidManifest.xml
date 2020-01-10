@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.MainActivity" />
-        <activity android:name=".ui.activities.CadastroProdutoActivity" />
+        <activity android:name=".ui.activities.ManipulaProdutoActivity" />
         <activity android:name=".ui.activities.ListaProdutosActivity" />
 
         <meta-data
