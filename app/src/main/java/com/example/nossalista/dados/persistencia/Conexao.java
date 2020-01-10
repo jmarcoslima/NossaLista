@@ -19,7 +19,7 @@ public class Conexao extends SQLiteOpenHelper {
      * Quando for feita qualquer alteração no esquema
      * a versão dever ser incrementada.
      */
-    private static final int version = 2;
+    private static final int version = 3;
     public Conexao(Context context) {
         super(context, name, null, version);
     }
@@ -43,8 +43,14 @@ public class Conexao extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE item (" +
                 "idItem INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "fkProduto INTEGER," +
+                "fkCarrinho INTEGER, " +
                 "qtd INTEGER," +
-                "FOREIGN KEY(fkProduto) REFERENCES produto)");
+                "FOREIGN KEY(fkProduto) REFERENCES produto," +
+                "FOREIGN KEY(fkCarrinho) REFERENCES carrinho)");
+
+        db.execSQL("CREATE TABLE carrinho (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nome TEXT)");
     }
 
     /**

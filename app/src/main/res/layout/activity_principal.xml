@@ -319,7 +319,7 @@
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="20dp"
-            android:onClick="iniciaCarrinho"/>
+            android:onClick="iniciaListaCarrinho"/>
 
         <Button
             android:id="@+id/btSobre"

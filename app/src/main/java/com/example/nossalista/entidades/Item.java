@@ -16,7 +16,7 @@ public class Item{
      * que faz referencia ao id do Produto.
      *
      */
-    private Integer id, fkProduto;
+    private Integer id, fkProduto, fkCarrinho;
 
     private Produto produto;
     private float qtd;
@@ -30,6 +30,16 @@ public class Item{
         this.fkProduto = fkProduto;
     }
 
+    public Item(Produto produto, float qtd, Integer id,
+                Integer fkProduto, Integer fkCarrinho){
+
+        this.produto = produto;
+        this.qtd = qtd;
+        this.id = id;
+        this.fkProduto = fkProduto;
+        this.fkCarrinho = fkCarrinho;
+    }
+
     public Item(Produto produto){
 
         this.produto = produto;
@@ -38,6 +48,14 @@ public class Item{
 
     public Item(){
 
+    }
+
+    public Integer getFkCarrinho() {
+        return fkCarrinho;
+    }
+
+    public void setFkCarrinho(Integer fkCarrinho) {
+        this.fkCarrinho = fkCarrinho;
     }
 
     public Produto getProduto() {

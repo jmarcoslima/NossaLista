@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void iniciaCarrinho(View view){
+    public void iniciaListaCarrinho(View view){
 
-        Intent intent = new Intent(this, CarrinhoActivity.class);
+        Intent intent = new Intent(this, ListaCarrinhoActivity.class);
         startActivity(intent);
     }
 
