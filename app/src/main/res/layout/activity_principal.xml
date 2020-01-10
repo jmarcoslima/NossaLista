@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/colorgradient"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
 
     <LinearLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <ImageView
             android:id="@+id/menu"
@@ -32,6 +33,7 @@
 
 
         <GridLayout
+            android:id="@+id/gv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -41,22 +43,25 @@
             android:rowCount="3">
 
             <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardCarne"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="15dp"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                >
 
                 <LinearLayout
-                    android:id="@+id/card1"
-                    android:onClick="iniciaLista"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    >
 
                     <ImageView
                         android:layout_width="80dp"
@@ -67,7 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Carnes &amp; Frios"
+                        android:text="@string/carneefrios"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -75,6 +80,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardBebida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -99,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Bebidas"
+                        android:text="@string/bebidas"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -108,6 +114,8 @@
 
 
             <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardHL"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -117,6 +125,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -132,7 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Higiene &amp; Limpeza"
+                        android:text="@string/higieneelimpeza"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -140,6 +149,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardMercearia"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -149,6 +160,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -164,7 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Mercearia"
+                        android:text="@string/mercearia"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -172,6 +184,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardHortifruti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -181,6 +195,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -196,7 +211,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Hortifruti"
+                        android:text="@string/hortifruti"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -204,6 +219,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardGeral"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -213,6 +230,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -228,7 +246,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Geral"
+                        android:text="@string/geral"
                         android:textColor="#6f6f6f"
                         android:textSize="15sp" />
 
@@ -284,11 +302,12 @@
             android:text="Cadastrar Produto"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="telaCadastro"/>
 
 
         <Button
-            android:id="@+id/btListas"
+            android:id="@+id/btCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -296,10 +315,11 @@
             android:background="#00FFFEFE"
             android:drawablePadding="10dp"
             android:gravity="left|center_vertical"
-            android:text="Listas"
+            android:text="Carrinho"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="iniciaCarrinho"/>
 
         <Button
             android:id="@+id/btSobre"

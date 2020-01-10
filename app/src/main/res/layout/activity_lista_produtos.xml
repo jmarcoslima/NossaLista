@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="20dp"
         android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="391dp"
+        android:layout_height="711dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        tools:listitem="@layout/item_produto" />
 
     </RelativeLayout>

@@ -12,21 +12,21 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/card1"
+        android:id="@+id/card_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="5dp">
 
         <ImageView
             android:layout_gravity="center"
-            android:id="@+id/fotoproduto"
-            android:layout_width="40dp"
+            android:id="@+id/foto_item"
+            android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/andrenaruto"
             android:layout_marginLeft="10dp"/>
 
         <TextView
-            android:id="@+id/nome"
+            android:id="@+id/nome_item"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -35,18 +35,8 @@
             android:textColor="#6f6f6f"
             android:textSize="18sp" />
 
-
         <ImageButton
-            android:id="@+id/btnadd"
-            android:layout_width="73dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            app:srcCompat="@android:drawable/ic_input_add"
-            style="@style/btn_itens_de_lista" />
-
-        <ImageButton
-            android:id="@+id/btndel"
+            android:id="@+id/btndel_item"
             android:layout_width="73dp"
             android:layout_height="70dp"
             android:layout_weight="1"
@@ -54,17 +44,6 @@
             app:srcCompat="@android:drawable/ic_menu_delete"
             style="@style/btn_itens_de_lista" />
 
-        <ImageButton
-            android:id="@+id/btnedit"
-            android:layout_width="73dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            app:srcCompat="@android:drawable/ic_menu_edit"
-            style="@style/btn_itens_de_lista" />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
-
-

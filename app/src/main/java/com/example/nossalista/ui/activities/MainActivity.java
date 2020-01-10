@@ -1,59 +1,128 @@
-package com.example.nossalista;
+package com.example.nossalista.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.nossalista.Classes.ListaProdutosActivity;
-import com.example.nossalista.Classes.NavigationDrawerb;
-import com.example.nossalista.Classes.Swipe;
-import com.example.nossalista.banco.ConexaoFB;
+import com.example.nossalista.R;
+import com.example.nossalista.ui.uteis.NavigationDrawerb;
+import com.example.nossalista.ui.uteis.Swipe;
+import com.example.nossalista.dados.firebase.ConexaoFB;
 
 
 public class MainActivity extends AppCompatActivity {
+
     RelativeLayout embacar;
     LinearLayout maincontent,mainmenu;
     ImageView btnMenu,avatar;
     Animation fromtop, frombottom;
     TextView nomeUser, tituloSobre, version;
     Button btListas, btCadastro, btSobre, btSair;
-
-
+    private String categoria;
+    private CardView cardCarne, cardBebida, cardHL, cardMercearia,
+            cardHortifruti, cardGeral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         NavigationDrawerb nd = new NavigationDrawerb(this);
-        LinearLayout card1 = findViewById(R.id.card1);
 
         instanciarViews();
         chamarBarra();
         swipeMenu();
-        btSair();
-        btnLista();
 
+        cardCarne = findViewById(R.id.cardCarne);
+        cardBebida = findViewById(R.id.cardBebida);
+        cardHL = findViewById(R.id.cardHL);
+        cardMercearia = findViewById(R.id.cardMercearia);
+        cardHortifruti = findViewById(R.id.cardHortifruti);
+        cardGeral = findViewById(R.id.cardGeral);
+
+
+
+        cardCarne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.carneefrios);
+                iniciaLista();
+            }
+        });
+
+        cardBebida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.bebidas);
+                iniciaLista();
+            }
+        });
+
+        cardHL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.higieneelimpeza);
+                iniciaLista();
+            }
+        });
+
+        cardMercearia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.mercearia);
+                iniciaLista();
+            }
+        });
+
+        cardHortifruti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.hortifruti);
+                iniciaLista();
+            }
+        });
+
+        cardGeral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                categoria = getString(R.string.geral);
+                iniciaLista();
+            }
+        });
     }
 
 
-    public void iniciaLista(View view){
+    public void iniciaLista(){
+
         Intent intent = new Intent(this, ListaProdutosActivity.class);
+        intent.putExtra("categoria", categoria);
         startActivity(intent);
-
     }
+
+    public void iniciaCarrinho(View view){
+
+        Intent intent = new Intent(this, CarrinhoActivity.class);
+        startActivity(intent);
+    }
+
 
     private void instanciarViews() {
         //Button
-        btListas = findViewById(R.id.btListas);
+        btListas = findViewById(R.id.btCarrinho);
         btCadastro = findViewById(R.id.btCadastro);
         btSobre = findViewById(R.id.btSobre);
         btSair = findViewById(R.id.btSair);
@@ -97,8 +166,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void telaCadastro(View view) {
+        Intent i = new Intent(this, CadastroProdutoActivity.class);
+        startActivity(i);
 
     }
+
 
     private void abrirMenu() {
         maincontent.animate().translationX(0);
@@ -136,35 +210,12 @@ public class MainActivity extends AppCompatActivity {
         mainmenu.animate().translationX(-800);
         embacar.setX(1600);
     }
-    /*
-    * Chamando a Activity ListaCardView através do Intent com um clickView
-     */
-    private  void btnLista(){
-        btListas = findViewById(R.id.btListas);
-        btListas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListaCardView.class);
-                startActivity(intent);
-            }
-        });
+
+    private void btSair(View view){
+        ConexaoFB.logOut();
+        finish();
 
     }
-    private void btSair(){
-        btSair = findViewById(R.id.btSair);
-        btSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ConexaoFB.logOut();
-                finish();
-            }
-        });
-
-    }
-
-
-
-
 
     private void swipeMenu() {
 

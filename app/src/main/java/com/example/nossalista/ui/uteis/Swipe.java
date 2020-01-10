@@ -1,4 +1,4 @@
-package com.example.nossalista.Classes;
+package com.example.nossalista.ui.uteis;
 
 import android.content.Context;
 import android.view.GestureDetector;

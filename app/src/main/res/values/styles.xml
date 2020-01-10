@@ -21,5 +21,10 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="btn_itens_de_lista">
+
+        <item name="android:tint">@color/corDeBotaoDeLista</item>
+
+    </style>
 
 </resources>

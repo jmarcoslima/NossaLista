@@ -1,7 +1,6 @@
-package com.example.nossalista;
+package com.example.nossalista.ui.uteis;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -11,7 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nossalista.teste.LoginActivity;
+import com.example.nossalista.R;
+import com.example.nossalista.ui.activities.LoginActivity;
 
 /**
  * Classe para a splash screen
